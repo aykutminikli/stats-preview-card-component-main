@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root{
+    --main-bg: hsl(233, 47%, 7%);
+    --card-bg: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    --main-heading: hsl(0, 0%, 100%);
+    --sh-color: hsla(0, 0%, 100%, 0.6);
+    --text-color: hsla(0, 0%, 100%, 0.75);
+    --font-inter: "Inter";
+    --font-lexend: "Lexend Deca";
+}
+
+html{font-size: 15px;}
+
+.main-bg{background-color: var(--main-bg);}
+.card-bg{background-color: var(--card-bg);}
+.bg-accent{background-color: var(--accent);}
+.accent{color: var(--accent);}
+.main-heading{color: var(--main-heading);}
+.text-color{color: var(--text-color);}
+.sh-color{color: var(--sh-color);}
+.fw-400{font-weight: 400;}
+.fw-700{font-weight: 700;}
+.grid{display: grid;}
+.place-content-center{place-content: center;}
+
+body{
+    font-family: var(--font-inter);
+}
+
+.card{
+    max-width: 654px;
+    margin: 0 1.5em;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+.card__header picture{
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+}
+
+.card__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 2em;
+    padding: 2.5em 2em 2em 2em;
+    text-align: center;
+}
+
+.card__title{
+    font-size: 1.8rem;
+    line-height: 1.2em;
+}
+
+.card__desc{
+    margin-top: 1em;
+    line-height: 1.6em;
+}
+
+.card__stats{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+}
+
+.stat__group{
+    line-height: 1.8em;
+}
+
+.stat__heading{
+    font-family: var(--font-lexend);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+@media only screen and (min-width: 1110px) {
+    .card{
+        max-width: 1110px;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 540px;
+        grid-template-areas: "cbody photo";
+    }
+
+    .card__body{
+        grid-area: cbody;
+        text-align: start;
+        padding: 5em 7.5em 4em 4.5em;
+    }
+
+    .card__header{
+        grid-area: photo;
+    }
+
+    .card__title{
+        font-size: 2.4rem;
+    }
+
+    .card__desc{
+    margin-top: 2em;
+    }
+
+    .card__stats{
+        flex-direction: row;
+        column-gap: 4em;
+    }
+}
